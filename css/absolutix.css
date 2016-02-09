@@ -184,7 +184,7 @@ fieldset[disabled] .btn-xl.active {
     font-family:"Roboto Slab", "Kaushan Script", "Helvetica Neue",Helvetica,Arial,cursive;
 
     font-weight: 100;
-    color: #fed136;
+    color: white;
 }
 
 .navbar-default .navbar-brand:hover,
@@ -272,7 +272,7 @@ fieldset[disabled] .btn-xl.active {
 header {
     text-align: center;
     color: #fff;
-    height: 800px;
+    height:1000px;
     background-attachment: scroll;
     background-image: url(../img/header-bg.jpg);
     background-position: center center;
@@ -306,6 +306,7 @@ header .intro-text .intro-heading {
 }
 
 @media(min-width:768px) {
+
     header .intro-text {
         padding-top: 300px;
         padding-bottom: 200px;

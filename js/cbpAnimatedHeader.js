@@ -21,7 +21,7 @@ var cbpAnimatedHeader = (function() {
 		window.addEventListener( 'scroll', function( event ) {
 			if( !didScroll ) {
 				didScroll = true;
-				setTimeout( scrollPage, 200 );
+				setTimeout( scrollPage, 100 );
 			}
 		}, false );
 	}
@@ -35,7 +35,7 @@ var cbpAnimatedHeader = (function() {
 			classie.remove( header, 'navbar-shrink' );
 		};
 		//classie.add( arrow1, 'hidden');
-		arrow1.style.opacity = 1 - sy / 300 ;
+		arrow1.style.opacity = 1 - sy / 100 ;
 
 		didScroll = false;
 	}
@@ -43,6 +43,11 @@ var cbpAnimatedHeader = (function() {
 	function scrollY() {
 		return window.pageYOffset || docElem.scrollTop;
 	}
+
+	var viewportSize = window.innerHeight;
+	viewportSizePx = viewportSize + 'px';
+	var header = document.querySelector('header');
+	header.style.height = viewportSizePx ;
 
 	init();
 
