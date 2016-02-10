@@ -10,6 +10,11 @@
  */
 var cbpAnimatedHeader = (function() {
 
+	var viewportSize = window.innerHeight;
+	viewportSizePx = viewportSize + 'px';
+	var header = document.querySelector('header');
+	header.style.height = viewportSizePx;
+
 	var docElem = document.documentElement,
 		header = document.querySelector( '.navbar-default' ),
 		arrow1 = document.querySelector( '.arrow' ),
@@ -44,10 +49,7 @@ var cbpAnimatedHeader = (function() {
 		return window.pageYOffset || docElem.scrollTop;
 	}
 
-	var viewportSize = window.innerHeight;
-	viewportSizePx = viewportSize + 'px';
-	var header = document.querySelector('header');
-	header.style.height = viewportSizePx ;
+
 
 	init();
 
