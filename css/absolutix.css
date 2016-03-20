@@ -273,6 +273,7 @@ header {
     text-align: center;
     color: #fff;
     background-attachment: scroll;
+    height:100vh;
     background-image: url(../img/header-bg.jpg);
     background-position: center center;
     background-repeat: none;
