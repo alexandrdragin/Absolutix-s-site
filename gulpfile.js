@@ -17,6 +17,9 @@ var server = require("browser-sync");
 
 var uglify = require('gulp-uglify');
 
+var uncss = require('gulp-uncss');
+var concat = require('gulp-concat');
+
 gulp.task("images", function() {
     return gulp.src("img/**/*.{png,jpg,gif}")
       .pipe(imagemin({
@@ -27,8 +30,12 @@ gulp.task("images", function() {
 });
 
 gulp.task("style", function() {
-  gulp.src("css/absolutix.css")
+  gulp.src("css/**/*.css")
     .pipe(plumber())
+    .pipe(concat('main.css'))
+    .pipe(uncss({
+        html: ['index.html']
+    }))
     .pipe(postcss([
       autoprefixer({browsers: [
         "last 1 version",
@@ -42,7 +49,7 @@ gulp.task("style", function() {
     ]))
     .pipe(gulp.dest("build/css"))
     .pipe(minify())
-    .pipe(rename("absolutix.min.css"))
+    .pipe(rename("main.min.css"))
     .pipe(gulp.dest("build/css"))
 
     .pipe(server.reload({stream: true}));
