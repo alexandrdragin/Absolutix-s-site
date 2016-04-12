@@ -4059,15 +4059,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     border-radius: 4px;
   }
 }
-<<<<<<< HEAD
 
-=======
-@media (min-width: 768px) {
-  .navbar-header {
-    float: left;
-  }
-}
->>>>>>> master
 .navbar-collapse {
   padding-right: 15px;
   padding-left: 15px;
@@ -4221,13 +4213,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 @media (max-width: 767px) {
   .navbar-nav .open .dropdown-menu {
     position: static;
-<<<<<<< HEAD
 
-=======
-    float: none;
-    width: auto;
-    margin-top: 0;
->>>>>>> master
     background-color: transparent;
     border: 0;
     -webkit-box-shadow: none;
@@ -4245,7 +4231,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     background-image: none;
   }
 }
-<<<<<<< HEAD
 
   .navbar-nav {
     display: inline-block;
@@ -4261,21 +4246,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 
   }
 
-=======
-@media (min-width: 768px) {
-  .navbar-nav {
-    float: left;
-    margin: 0;
-  }
-  .navbar-nav > li {
-    float: left;
-  }
-  .navbar-nav > li > a {
-    padding-top: 15px;
-    padding-bottom: 15px;
-  }
-}
->>>>>>> master
 .navbar-form {
   padding: 10px 15px;
   margin-top: 8px;

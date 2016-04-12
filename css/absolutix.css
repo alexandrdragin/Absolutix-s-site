@@ -181,13 +181,10 @@ fieldset[disabled] .btn-xl.active {
 }
 
 .navbar-default .navbar-brand {
-    font-family:"Roboto Slab", "Kaushan Script", "Helvetica Neue",Helvetica,Arial,cursive;
+    font-family:"Roboto Slab","Helvetica Neue",Helvetica,Arial,cursive;
 
     font-weight: 100;
-<<<<<<< HEAD
     letter-spacing: 0px;
-=======
->>>>>>> master
     color: white;
 }
 
@@ -218,7 +215,7 @@ fieldset[disabled] .btn-xl.active {
 
 .navbar-default .nav li a {
     text-transform: uppercase;
-    font-family:"Kaushan Script", "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif, ;
+    font-family:"Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif, ;
     font-weight: 400;
     letter-spacing: 1px;
     color: #fff;
@@ -242,37 +239,6 @@ fieldset[disabled] .btn-xl.active {
     background-color: #fec503;
 }
 
-@media(min-width:768px) {
-    .navbar-default {
-        padding: 25px 0;
-        border: 0;
-        background-color: transparent;
-        -webkit-transition: padding .3s;
-        -moz-transition: padding .3s;
-        transition: padding .3s;
-    }
-
-    .navbar-default .navbar-brand {
-        font-size: 2em;
-        -webkit-transition: all .3s;
-        -moz-transition: all .3s;
-        transition: all .3s;
-    }
-
-    .navbar-default .navbar-nav>.active>a {
-        border-radius: 3px;
-    }
-
-    .navbar-default.navbar-shrink {
-        padding: 10px 0;
-        background-color: #222;
-    }
-
-    .navbar-default.navbar-shrink .navbar-brand {
-        font-size: 1.5em;
-    }
-}
-
 header {
     text-align: center;
     color: #fff;
@@ -281,8 +247,6 @@ header {
     background-image: url(../img/header-bg.jpg);
     background-position: center center;
     background-repeat: none;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
 }
@@ -307,31 +271,6 @@ header .intro-text .intro-heading {
     font-size: 40px;
     font-weight: 300;
     line-height: 50px;
-}
-
-@media(min-width:768px) {
-
-    header .intro-text {
-        padding-top: 300px;
-        padding-bottom: 200px;
-    }
-
-    header .intro-text .intro-lead-in {
-        margin-bottom: 15px;
-        font-family: "PT Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
-        font-size: 30px;
-        font-style: italic;
-        line-height: 40px;
-    }
-
-    header .intro-text .intro-heading {
-        margin-bottom: 50px;
-      /* text-transform: lowercase; */
-        font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
-        font-size: 40px;
-        font-weight: 300;
-        line-height: 75px;
-    }
 }
 
 section {
@@ -360,12 +299,6 @@ section h3.section-subheading {
     font-weight: 400;
 }
 
-@media(min-width:768px) {
-    section {
-        padding: 150px 0;
-    }
-}
-
 .service-heading {
 	position:relative;
     top:10px;
@@ -391,17 +324,10 @@ section h3.section-subheading {
     width: 100%;
     height: 100%;
     opacity: 0;
-<<<<<<< HEAD
 
     box-sizing: border-box;
     background: rgba(24,20,24,.5);
     transition: all ease .7s;
-=======
-    background: rgba(254,209,54,.9);
-    -webkit-transition: all ease .5s;
-    -moz-transition: all ease .5s;
-    transition: all ease .5s;
->>>>>>> master
 }
 
 #portfolio .portfolio-item .portfolio-link .portfolio-hover:hover {
@@ -450,12 +376,6 @@ section h3.section-subheading {
 
 #portfolio * {
     z-index: 2;
-}
-
-@media(min-width:767px) {
-    #portfolio .portfolio-item {
-        margin: 0 0 30px;
-    }
 }
 
 .timeline {
@@ -569,93 +489,6 @@ section h3.section-subheading {
 .timeline .timeline-body>p,
 .timeline .timeline-body>ul {
     margin-bottom: 0;
-}
-
-@media(min-width:768px) {
-    .timeline:before {
-        left: 50%;
-    }
-
-    .timeline>li {
-        margin-bottom: 100px;
-        min-height: 100px;
-    }
-
-    .timeline>li .timeline-panel {
-        float: left;
-        width: 41%;
-        padding: 0 20px 20px 30px;
-        text-align: right;
-    }
-
-    .timeline>li .timeline-image {
-        left: 50%;
-        width: 100px;
-        height: 100px;
-        margin-left: -50px;
-    }
-
-    .timeline>li .timeline-image h4 {
-        margin-top: 16px;
-        font-size: 13px;
-        line-height: 18px;
-    }
-
-    .timeline>li.timeline-inverted>.timeline-panel {
-        float: right;
-        padding: 0 30px 20px 20px;
-        text-align: left;
-    }
-}
-
-@media(min-width:992px) {
-    .timeline>li {
-        min-height: 150px;
-    }
-
-    .timeline>li .timeline-panel {
-        padding: 0 20px 20px;
-    }
-
-    .timeline>li .timeline-image {
-        width: 150px;
-        height: 150px;
-        margin-left: -75px;
-    }
-
-    .timeline>li .timeline-image h4 {
-        margin-top: 30px;
-        font-size: 18px;
-        line-height: 26px;
-    }
-
-    .timeline>li.timeline-inverted>.timeline-panel {
-        padding: 0 20px 20px;
-    }
-}
-
-@media(min-width:1200px) {
-    .timeline>li {
-        min-height: 170px;
-    }
-
-    .timeline>li .timeline-panel {
-        padding: 0 20px 20px 100px;
-    }
-
-    .timeline>li .timeline-image {
-        width: 170px;
-        height: 170px;
-        margin-left: -85px;
-    }
-
-    .timeline>li .timeline-image h4 {
-        margin-top: 40px;
-    }
-
-    .timeline>li.timeline-inverted>.timeline-panel {
-        padding: 0 100px 20px 20px;
-    }
 }
 
 .team-member {
@@ -782,8 +615,6 @@ ul.social-buttons li a {
     outline: 0;
     color: #fff;
     background-color: #222;
-    -webkit-transition: all .3s;
-    -moz-transition: all .3s;
     transition: all .3s;
 }
 
@@ -807,7 +638,6 @@ ul.social-buttons li a:active {
     border-radius: 0;
     text-align: center;
     background-clip: border-box;
-    -webkit-box-shadow: none;
     box-shadow: none;
 }
 
@@ -856,8 +686,6 @@ ul.social-buttons li a:active {
     height: 75px;
     margin-left: 35px;
     background-color: #222;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
     transform: rotate(45deg);
 }
 
@@ -866,8 +694,6 @@ ul.social-buttons li a:active {
     width: 1px;
     height: 75px;
     background-color: #222;
-    -webkit-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
     transform: rotate(90deg);
 }
 
@@ -886,6 +712,10 @@ ul.social-buttons li a:active {
     background: #fed136;
 }
 
+img::-moz-selection {
+    background: 0 0;
+}
+
 img::selection {
     background: 0 0;
 }
@@ -897,7 +727,6 @@ img::-moz-selection {
 body {
     webkit-tap-highlight-color: #fed136;
 }
-<<<<<<< HEAD
 
 @media(min-width:767px) {
 
@@ -1057,5 +886,3 @@ body {
   font-size: 1.2em;
   top: 1px;
 }
-=======
->>>>>>> master
