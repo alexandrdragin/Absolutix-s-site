@@ -177,7 +177,7 @@ fieldset[disabled] .btn-xl.active {
 
 .navbar-default {
     border-color: transparent;
-    background-color: #222;
+    background-color: rgba(25,25,25,.6);
 }
 
 .navbar-default .navbar-brand {
@@ -326,7 +326,7 @@ section h3.section-subheading {
     opacity: 0;
 
     box-sizing: border-box;
-    background: rgba(24,29,54,.5);
+    background: rgba(24,20,24,.5);
     transition: all ease .7s;
 }
 
@@ -874,4 +874,15 @@ body {
     .timeline>li.timeline-inverted>.timeline-panel {
         padding: 0 100px 20px 20px;
     }
+}
+
+
+.nav-icon {
+  font-size: 1.4em;
+
+}
+
+.nav-icon2 {
+  font-size: 1.2em;
+  top: 1px;
 }
