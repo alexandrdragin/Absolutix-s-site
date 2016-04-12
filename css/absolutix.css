@@ -875,3 +875,18 @@ body {
         padding: 0 100px 20px 20px;
     }
 }
+
+.nav-icon {
+  font-size: 1.4em;
+
+}
+
+.nav-icon2 {
+  font-size: 1.2em;
+  top: 1px;
+}
+
+.icons-nav {
+  float: right !important;
+  margin-right: -15px;
+}
