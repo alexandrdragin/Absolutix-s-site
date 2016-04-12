@@ -5,6 +5,9 @@ var plumber = require("gulp-plumber");
 var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
 
+var uncss = require('gulp-uncss');
+var concat = require('gulp-concat');
+
 var mqpacker = require("css-mqpacker");
 var minify = require("gulp-csso");
 var rename = require("gulp-rename");
@@ -27,7 +30,12 @@ gulp.task("images", function() {
 });
 
 gulp.task("style", function() {
-  gulp.src("css/absolutix.css")
+  gulp.src("css/**/*.css")
+    .pipe(plumber())
+    .pipe(concat('main.css'))
+    .pipe(uncss({
+        html: ['index.html']
+    }))
     .pipe(plumber())
     .pipe(postcss([
       autoprefixer({browsers: [
@@ -42,7 +50,7 @@ gulp.task("style", function() {
     ]))
     .pipe(gulp.dest("build/css"))
     .pipe(minify())
-    .pipe(rename("absolutix.min.css"))
+    .pipe(rename("main.min.css"))
     .pipe(gulp.dest("build/css"))
 
     .pipe(server.reload({stream: true}));
