@@ -18,13 +18,12 @@
 
 
     <title>Absolutix</title>
-    <link href="css/min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/absolutix.css" rel="stylesheet">
 
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700&subset=latin,cyrillic" rel="stylesheet" type="text/css">
-    <link href='http://fonts.googleapis.com/css?family=Roboto:100,300,400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
     <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
@@ -55,32 +54,18 @@
 
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
-             <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top"><b>С</b>АМШИТ</a>
-            </div>
+          <div class="navbar-header page-scroll">
 
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
+                <a class="navbar-brand page-scroll" href="#page-top">Absolutix</a>
 
-                    <li>
-                        <a class="page-scroll" href="#portfolio">Все сразу</a>
+                <ul class="nav navbar-nav">
+
+                    <li class="nav-icon"><a href="http://vk.com/sprihodko" target="_blank"><i class="fa fa-vk"></i></a>
                     </li>
-                     <li>
-                        <a class="page-scroll" href="#team">Команда</a>
-                    </li>
-                     <li>
-                        <a class="page-scroll" href="#contact">Заказать</a>
+                    <li class="nav-icon2"><a class="nav-icon" href="https://instagram.com/sergeyprihodko" target="_blank"><i class="fa fa-instagram"></i></a>
                     </li>
                 </ul>
+
             </div>
 
             <!-- /.navbar-collapse -->
@@ -95,14 +80,14 @@
                  <div class="intro-heading"> </div>
        </div>
         </div>
-        <div class="arrow"></div>
+        <a class="arrow page-scroll" href="#portfolio"></a>
     </header>
 
-    <section id="portfolio" class="bg-light-gray">
-        <div class="container">
+    <section class="bg-light-gray" >
+        <div class="container" id="portfolio">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Посмотрите</h2>
+                    <h2 class="section-heading" >Посмотрите</h2>
                     <h3 class="section-subheading text-muted">Если не верите</h3>
                 </div>
             </div>
@@ -264,7 +249,7 @@
                 <div class="col-sm-4">
                     <div class="team-member">
                         <img src="img/team/2.jpg" class="img-responsive img-circle" alt="">
-                        <h4>Саааш</h4>
+                        <h4>Саня</h4>
                         <p class="text-muted">Связи с общественностью</p>
                         <ul class="list-inline social-buttons">
                             <li><a href="https://www.behance.net/eastside"><i class="fa fa-behance"></i></a>
@@ -350,7 +335,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <span class="copyright">Покодил <a href="https://dl.dropboxusercontent.com/u/6764781/giphy.gif">Саааш</a> в 2015 году</span>
+                    <span class="copyright">Опен код на <a href="https://github.com/alexandrdragin/Absolutix-s-site">гитхабе</a></span>
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline social-buttons">
@@ -361,17 +346,11 @@
                         <li><a href="https://instagram.com/sergeyprihodko"><i class="fa fa-instagram"></i></a>
                         </li>
                         <li><a href="https://soundcloud.com/black-moth-super-rainbow/04-swoll-tongue"><i class="fa fa-music"></i></a>
-                                                </li>
+                      </li>
                     </ul>
                 </div>
-                <div class="col-md-4"><!--
-                    <ul class="list-inline quicklinks">
-                        <li><a href="#">Нашли ошибку? </a>
-                        </li>
-                        <li><a href="#">ок.</a>
-                        </li>
-                    </ul>-->
-   <span class="copyright">Нашли ошибку? Ок.</span>
+                <div class="col-md-4">
+   <span class="copyright">Для багов > <a href="https://github.com/alexandrdragin/Absolutix-s-site/issues">open issues<a/></span>
                 </div>
             </div>
         </div>
@@ -540,7 +519,7 @@
 
     <script src="js/bootstrap.min.js"></script>
 
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
     <script src="js/classie.js"></script>
     <script src="js/cbpAnimatedHeader.js"></script>
 
