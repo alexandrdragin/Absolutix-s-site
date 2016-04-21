@@ -1,3 +1,57 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'),
+       url('../fonts/open-sans-v13-cyrillic_latin-regular.woff2') format('woff2'),
+       url('../fonts/open-sans-v13-cyrillic_latin-regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'),
+       url('../fonts/open-sans-v13-cyrillic_latin-700.woff2') format('woff2'),
+       url('../fonts/open-sans-v13-cyrillic_latin-700.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Roboto Slab Thin'), local('RobotoSlab-Thin'),
+       url('../fonts/roboto-slab-v6-cyrillic_latin-100.woff2') format('woff2'),
+       url('../fonts/roboto-slab-v6-cyrillic_latin-100.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Slab Light'), local('RobotoSlab-Light'),
+       url('../fonts/roboto-slab-v6-cyrillic_latin-300.woff2') format('woff2'),
+       url('../fonts/roboto-slab-v6-cyrillic_latin-300.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Slab Regular'), local('RobotoSlab-Regular'),
+       url('../fonts/roboto-slab-v6-cyrillic_latin-regular.woff2') format('woff2'),
+       url('../fonts/roboto-slab-v6-cyrillic_latin-regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Slab Bold'), local('RobotoSlab-Bold'),
+       url('../fonts/roboto-slab-v6-cyrillic_latin-700.woff2') format('woff2'),
+       url('../fonts/roboto-slab-v6-cyrillic_latin-700.woff') format('woff');
+}
+
 body {
     overflow-x: hidden;
     font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -58,7 +112,7 @@ h4,
 h5,
 h6 {
     text-transform: uppercase;
-    font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
 }
 
@@ -245,6 +299,7 @@ header {
     background-attachment: scroll;
     height:100vh;
     background-image: url(../img/header-bg.jpg);
+    background-color: #C1BFC0;
     background-position: center center;
     background-repeat: none;
     background-size: cover;
@@ -275,6 +330,7 @@ header .intro-text .intro-heading {
 
 section {
     padding: 100px 0;
+    padding-bottom: 50px;
 }
 
 section h2.section-heading {
@@ -782,10 +838,6 @@ body {
         font-size: 40px;
         font-weight: 300;
         line-height: 75px;
-    }
-
-    section {
-        padding: 150px 0;
     }
 
     .timeline:before {
