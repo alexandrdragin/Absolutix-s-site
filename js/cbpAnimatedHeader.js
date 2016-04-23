@@ -14,7 +14,7 @@ var cbpAnimatedHeader = (function() {
 		header = document.querySelector( '.navbar-default' ),
 		arrow1 = document.querySelector( '.arrow' ),
 		didScroll = false,
-		changeHeaderOn = 700;
+		changeHeaderOn = 550;
 		arrow1.style.opacity = 0.9;
 
 	function init() {

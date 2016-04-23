@@ -23,7 +23,7 @@ var concat = require('gulp-concat');
 gulp.task("images", function() {
     return gulp.src("img/**/*.{png,jpg,gif}")
       .pipe(imagemin({
-      optimizationLevel: 3,
+      optimizationLevel: 6,
       progressive: true
     }))
     .pipe(gulp.dest("build/img"));
@@ -34,7 +34,28 @@ gulp.task("style", function() {
     .pipe(plumber())
     .pipe(concat('main.css'))
     .pipe(uncss({
-        html: ['index.html']
+        html: ['index.html'],
+        ignore: [/\w\.in/,
+                  ".fade",
+                  ".collapse",
+                  ".collapsing",
+                  /(#|\.)navbar(\-[a-zA-Z]+)?/,
+                  /(#|\.)dropdown(\-[a-zA-Z]+)?/,
+                  /(#|\.)(open)/,
+                  ".modal",
+                  ".modal-open",
+                  ".modal-open .modal",
+                  ".fade.in",
+                  ".portfolio-modal", ".modal-content", ".close-modal",
+                  ".modal-dialog",
+                  ".modal-document",
+                  ".modal-scrollbar-measure",
+                  ".modal-backdrop.fade",
+                  ".modal-backdrop.in",
+                  ".modal.fade.modal-dialog",
+                  ".modal.in.modal-dialog",
+                  ".in",
+                  ".modal-backdrop"]
     }))
     .pipe(postcss([
       autoprefixer({browsers: [
@@ -70,6 +91,9 @@ gulp.task("copy", function() {
   gulp.src("*.html").pipe(gulp.dest("build"));
   gulp.src("img/**.{png,jpg,gif,svg}").pipe(gulp.dest("build/img"));
   gulp.src("js/**.js").pipe(gulp.dest("build/js"));
+  gulp.src("font-awesome/*/**.*").pipe(gulp.dest("build/font-awesome"));
+  gulp.src("fonts/**.*").pipe(gulp.dest("build/fonts"));
+  gulp.src("mail/**.*").pipe(gulp.dest("build/mail"));
 });
 
 gulp.task("serve", function() {
