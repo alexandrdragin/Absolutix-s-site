@@ -23,7 +23,7 @@ var concat = require('gulp-concat');
 gulp.task("images", function() {
     return gulp.src("img/**/*.{png,jpg,gif}")
       .pipe(imagemin({
-      optimizationLevel: 3,
+      optimizationLevel: 5,
       progressive: true
     }))
     .pipe(gulp.dest("build/img"));
