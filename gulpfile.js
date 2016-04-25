@@ -89,8 +89,6 @@ gulp.task("clean", function() {
 
 gulp.task("copy", function() {
   gulp.src("*.html").pipe(gulp.dest("build"));
-  gulp.src("img/**.{png,jpg,gif,svg}").pipe(gulp.dest("build/img"));
-  gulp.src("js/**.js").pipe(gulp.dest("build/js"));
   gulp.src("font-awesome/*/**.*").pipe(gulp.dest("build/font-awesome"));
   gulp.src("fonts/**.*").pipe(gulp.dest("build/fonts"));
   gulp.src("mail/**.*").pipe(gulp.dest("build/mail"));

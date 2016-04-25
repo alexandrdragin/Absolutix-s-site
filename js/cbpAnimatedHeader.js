@@ -9,6 +9,8 @@ $(function() {
 		});
 });
 
+window.addEventListener('hashchange', this._onHashChange);
+
 /**
  * cbpAnimatedHeader.js v1.0.0
  * http://www.codrops.com
