@@ -48,7 +48,7 @@ body {
 }
 
 .arrow {
-  background: url('../img/noun_142503_cc.svg') bottom center no-repeat;
+  background: url('../img/arrow.svg') bottom center no-repeat;
   position: fixed;
   background-size: 100px;
   bottom: 20px;
@@ -77,7 +77,7 @@ a.active {
 }
 
 a {
-    color: #fed136;
+    color: #BCBFC4;
 }
 
 a:hover,
@@ -658,12 +658,6 @@ ul.social-buttons li a {
     color: #fff;
     background-color: #222;
     transition: all .3s;
-}
-
-ul.social-buttons li a:hover,
-ul.social-buttons li a:focus,
-ul.social-buttons li a:active {
-    background-color: #fed136;
 }
 
 .btn:focus,
