@@ -36,8 +36,6 @@ if (typeof jQuery === 'undefined') {
     this.isShown        = null
     this.scrollbarWidth = 0
 
-
-
     this._restoreFromHash = this._restoreFromHash.bind(this);
 
     if (this.options.remote) {
@@ -334,7 +332,7 @@ if (typeof jQuery === 'undefined') {
 
   // MODAL DATA-API
   // ==============
-  window.addEventListener('hashchange', _onHashChange);
+
 
   $(document).on('click.bs.modal.data-api', '[data-toggle="modal"]', function (e) {
 
@@ -366,5 +364,7 @@ if (typeof jQuery === 'undefined') {
       Modal._restoreFromHash();
     }
   };
+
+  window.addEventListener('hashchange', _onHashChange);
 
 }(jQuery);

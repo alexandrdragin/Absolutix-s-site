@@ -1,4 +1,4 @@
-a:hover {
+a:hover, a:focus {
   -webkit-animation: zomg 0.5s infinite;
   -moz-animation: zomg 0.5s infinite;
   animation: zomg 0.5s infinite;
