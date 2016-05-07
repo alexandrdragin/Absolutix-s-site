@@ -6,9 +6,30 @@
   var cross = null;
   var button = null;
   var modalWithId = null;
+  var wasOpen = false;
+
+  var scrollHeight = 0;
+
+  window.addEventListener('hashchange', onHashChange());
+  window.onhashchange = function() {
+    onHashChange();
+  };
 
   for (var i = 0; i < massive.length; i++) {
     massive[i].addEventListener('click', click, false);
+  }
+
+  function onHashChange() {
+    if (location.hash !== '') {
+      modalWithId = document.getElementById(location.hash.substr(1));
+      //modalWithId = document.querySelector('[href*="'+ location.hash +'"]');
+      if (modalWithId !== null) {
+        openModal();
+      }
+    }
+    if (location.hash === '' && wasOpen === true) {
+      closeModal();
+    }
   }
 
   function click() {
@@ -16,94 +37,64 @@
     /**
      * поиск что модала в доме по клику
      */
-    var currentModal = event.currentTarget;
+    var linkToModal = event.currentTarget;
 
-    var hrefCurrentModal = currentModal.getAttribute('href');
+    modalWithId = document.querySelector(linkToModal.getAttribute('href'));
 
-    var forId = hrefCurrentModal.substr(1);
+    location.hash = linkToModal.getAttribute('href');
+  }
 
-    modalWithId = document.getElementById(forId);
+  function closeClick() {
+    location.hash = '';
+  }
 
-    /**
-     * показ модала
-     */
+  function openModal() {
+    scrollHeight = window.scrollY;
     document.body.classList.add('modal-open');
     document.body.style.paddingRight = '0';
 
     modalWithId.style.display = 'block';
     modalWithId.setAttribute('aria-hidden', 'false');
-    modalWithId.classList.add('in');
-
-    var div = document.createElement('div');
-    div.classList.add('modal-backdrop', 'fade', 'in');
-    modalWithId.insertBefore(div, modalWithId.childNodes[0]);
 
     cross = modalWithId.getElementsByClassName('close-modal');
-    cross[0].addEventListener('click', closeClick);
-
     button = modalWithId.querySelector('button[type="button"]');
-    button.addEventListener('click', closeClick);
 
+    button.addEventListener('click', closeClick);
+    cross[0].addEventListener('click', closeClick);
     window.addEventListener('keydown', closeClick);
+
+    setTimeout(function() {
+      modalWithId.classList.add('in');
+    }, 50);
+
+    wasOpen = true;
+
+    //var div = document.createElement('div');
+    //div.classList.add('modal-backdrop', 'fade', 'in');
+    //modalWithId.insertBefore(div, modalWithId.childNodes[0]);
   }
 
+  function closeModal() {
 
-  function closeClick() {
+    modalWithId.classList.remove('in');
+
+    setTimeout(function() {
+      modalWithId.removeAttribute('style');
+      modalWithId.setAttribute('aria-hidden', 'true');
+    }, 250);
+
+    window.removeEventListener('keydown', closeClick);
+    button.removeEventListener('click', closeClick);
+    cross[0].removeEventListener('click', closeClick);
+
     document.body.removeAttribute('style');
     document.body.classList.remove('modal-open');
 
-    modalWithId.classList.remove('in');
-    modalWithId.removeAttribute('style');
-    modalWithId.setAttribute('aria-hidden', 'true');
+    window.scrollBy(0, scrollHeight);
 
-    window.removeEventListener('keydown', closeClick);
+    wasOpen = false;
 
-    button.removeEventListener('click', closeClick);
-    cross[0].removeEventListener('click', closeClick);
-    window.removeEventListener('click', closeClick);
-
-    modalWithId.removeChild(modalWithId.childNodes[0]);
+    //modalWithId.removeChild(modalWithId.childNodes[0]);
   }
-
-
-
-
-
-
-
-
-  var Overlay = function() {
-
-    this.massive = document.querySelectorAll('.portfolio-link');
-
-    this._log = this._log.bind(this);
-    this._onDocumentKeyDown = this._onDocumentKeyDown.bind(this);
-    this._cross = this._cross.bind(this);
-    this._clButton = this._clButton.bind(this);
-
-    this._onHashChange = this._onHashChange.bind(this);
-
-    this.massive.addEventListener('click', this._log, true);
-
-    Overlay.prototype._log = function() {
-      console.log('click');
-    };
-
-    Overlay.prototype.show = function() {
-      var cross = modal.querySelector('.close-modal');
-      var button = modal.querySelector('button[type="button"]');
-
-      cross.addEventListener('click', click);
-      button.addEventListener('click', click);
-    };
-
-    Overlay.prototype.hide = function() {
-      console.log('click');
-    };
-
-  };
-
-
-//var overlay = new Overlay();
 
 })();

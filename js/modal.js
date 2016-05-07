@@ -23,8 +23,6 @@ if (typeof jQuery === 'undefined') {
 +function ($) {
   'use strict';
 
-  var safeHash = 1;
-
   // MODAL CLASS DEFINITION
   // ======================
 
@@ -35,8 +33,6 @@ if (typeof jQuery === 'undefined') {
     this.$backdrop      =
     this.isShown        = null
     this.scrollbarWidth = 0
-
-    this._restoreFromHash = this._restoreFromHash.bind(this);
 
     if (this.options.remote) {
       this.$element
@@ -58,11 +54,6 @@ if (typeof jQuery === 'undefined') {
     show: true
   }
 
-
-
-  Modal.prototype._restoreFromHash = function() {
-      document.querySelector('[href*="'+ location.hash +'"]').click();
-  };
 
   Modal.prototype.toggle = function (_relatedTarget) {
     return this.isShown ? this.hide() : this.show(_relatedTarget)
@@ -139,10 +130,6 @@ if (typeof jQuery === 'undefined') {
     this.resize()
 
     $(document).off('focusin.bs.modal')
-
-    safeHash = 0;
-    location.hash = '';
-
 
     this.$element
       .removeClass('in')
@@ -339,10 +326,6 @@ if (typeof jQuery === 'undefined') {
     var $this   = $(this)
     var href    = $this.attr('href')
 
-    safeHash = 0;
-    location.hash = href;
-
-
     var $target = $($this.attr('data-target') || (href && href.replace(/.*(?=#[^\s]+$)/, ''))) // strip for ie7
     var option  = $target.data('bs.modal') ? 'toggle' : $.extend({ remote: !/#/.test(href) && href }, $target.data(), $this.data())
 
@@ -356,15 +339,5 @@ if (typeof jQuery === 'undefined') {
     })
     Plugin.call($target, option, this)
   })
-
-  function _onHashChange() {
-    console.log(safeHash);
-
-    if (safeHash == 1) {
-      Modal._restoreFromHash();
-    }
-  };
-
-  window.addEventListener('hashchange', _onHashChange);
 
 }(jQuery);
