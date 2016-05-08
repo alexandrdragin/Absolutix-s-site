@@ -21,7 +21,7 @@ var uncss = require('gulp-uncss');
 var concat = require('gulp-concat');
 
 gulp.task("images", function() {
-    return gulp.src("img/**/*.{png,jpg,gif}")
+    return gulp.src("img/**/*.{png,jpg,gif,ico,svg}")
       .pipe(imagemin({
       optimizationLevel: 6,
       progressive: true
