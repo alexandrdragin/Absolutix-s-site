@@ -282,12 +282,24 @@ header {
     color: #fff;
     background-attachment: scroll;
     height:100vh;
-    background-image: url(../img/header-bg.jpg);
+    background-image: url(../img/header-bg-mobile-retina.jpg);
     background-color: #C1BFC0;
     background-position: center center;
     background-repeat: none;
     background-size: cover;
     -o-background-size: cover;
+}
+
+@media (min-width:768px) {
+  header {
+    background-image: url(../img/header-bg-tablet-retina.jpg);
+  }
+}
+
+ @media (min-width:1100px) {
+   header {
+     background-image: url(../img/header-bg-retina.jpg);
+ }
 }
 
 header .intro-text {
