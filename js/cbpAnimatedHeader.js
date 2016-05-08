@@ -1,14 +1,3 @@
-// jQuery for page scrolling feature - requires jQuery Easing plugin
-$(function() {
-		$('a.page-scroll').bind('click', function(event) {
-				var $anchor = $(this);
-				$('html, body').stop().animate({
-						scrollTop: $($anchor.attr('href')).offset().top
-				}, 1200, 'easeInOutExpo');
-				event.preventDefault();
-		});
-});
-
 /**
  * cbpAnimatedHeader.js v1.0.0
  * http://www.codrops.com
@@ -21,12 +10,12 @@ $(function() {
  */
 var cbpAnimatedHeader = (function() {
 
-  var docElem = document.documentElement;
-	header = document.querySelector( '.navbar-default' );
-	arrow1 = document.querySelector( '.arrow' );
-	didScroll = false,
-	changeHeaderOn = 550;
-	arrow1.style.opacity = 0.9;
+	var docElem = document.documentElement,
+		header = document.querySelector( '.navbar-default' ),
+		arrow1 = document.querySelector( '.arrow' ),
+		didScroll = false,
+		changeHeaderOn = 550;
+		arrow1.style.opacity = 0.9;
 
 	function init() {
 		window.addEventListener( 'scroll', function( event ) {
@@ -40,11 +29,12 @@ var cbpAnimatedHeader = (function() {
 	function scrollPage() {
 		var sy = scrollY();
 		if ( sy >= changeHeaderOn ) {
-			header.classList.add('navbar-shrink');
+			classie.add( header, 'navbar-shrink' );
 		}
 		else {
-			header.classList.remove('navbar-shrink');
+			classie.remove( header, 'navbar-shrink' );
 		};
+		//classie.add( arrow1, 'hidden');
 		arrow1.style.opacity = 1 - sy / 100 ;
 
 		didScroll = false;
