@@ -49,25 +49,23 @@
   }
 
   function openModal() {
+
+    loadImage();
+
     scrollHeight = window.scrollY;
+    wasOpen = true;
+
     document.body.classList.add('modal-open');
     document.body.style.paddingRight = '0';
 
     modalWithId.style.display = 'block';
     modalWithId.setAttribute('aria-hidden', 'false');
 
-    cross = modalWithId.getElementsByClassName('close-modal');
-    button = modalWithId.querySelector('button[type="button"]');
-
-    button.addEventListener('click', closeClick);
-    cross[0].addEventListener('click', closeClick);
-    window.addEventListener('keydown', closeClick);
-
     setTimeout(function() {
       modalWithId.classList.add('in');
     }, 50);
 
-    wasOpen = true;
+    addListeners();
 
     //var div = document.createElement('div');
     //div.classList.add('modal-backdrop', 'fade', 'in');
@@ -81,11 +79,9 @@
     setTimeout(function() {
       modalWithId.removeAttribute('style');
       modalWithId.setAttribute('aria-hidden', 'true');
-    }, 250);
 
-    window.removeEventListener('keydown', closeClick);
-    button.removeEventListener('click', closeClick);
-    cross[0].removeEventListener('click', closeClick);
+      unLoadImage();
+    }, 250);
 
     document.body.removeAttribute('style');
     document.body.classList.remove('modal-open');
@@ -94,7 +90,36 @@
 
     wasOpen = false;
 
+    removeListeners();
+
     //modalWithId.removeChild(modalWithId.childNodes[0]);
+  }
+
+  function loadImage() {
+    for (var i = 0; i < modalWithId.getElementsByTagName('img').length; i++) {
+      modalWithId.getElementsByTagName('img')[i].src = '../img/portfolio/' + location.hash.substr(1) + i + '.jpg';
+    }
+  }
+
+  function unLoadImage() {
+    for (var i = 0; i < modalWithId.getElementsByTagName('img').length; i++) {
+      modalWithId.getElementsByTagName('img')[i].removeAttribute('src');
+    }
+  }
+
+  function addListeners() {
+    cross = modalWithId.getElementsByClassName('close-modal');
+    button = modalWithId.querySelector('button[type="button"]');
+
+    button.addEventListener('click', closeClick);
+    cross[0].addEventListener('click', closeClick);
+    window.addEventListener('keydown', closeClick);
+  }
+
+  function removeListeners() {
+    window.removeEventListener('keydown', closeClick);
+    button.removeEventListener('click', closeClick);
+    cross[0].removeEventListener('click', closeClick);
   }
 
 })();
