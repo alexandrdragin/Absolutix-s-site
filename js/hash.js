@@ -34,14 +34,8 @@
 
   function click() {
     event.preventDefault();
-    /**
-     * поиск что модала в доме по клику
-     */
-    var linkToModal = event.currentTarget;
 
-    modalWithId = document.querySelector(linkToModal.getAttribute('href'));
-
-    location.hash = linkToModal.getAttribute('href');
+    location.hash = event.currentTarget.getAttribute('href');
   }
 
   function closeClick() {
@@ -49,7 +43,6 @@
   }
 
   function openModal() {
-
     loadImage();
 
     scrollHeight = window.scrollY;
@@ -63,13 +56,10 @@
 
     setTimeout(function() {
       modalWithId.classList.add('in');
-    }, 50);
+    }, 150);
 
     addListeners();
-
-    //var div = document.createElement('div');
-    //div.classList.add('modal-backdrop', 'fade', 'in');
-    //modalWithId.insertBefore(div, modalWithId.childNodes[0]);
+    addSecretDiv();
   }
 
   function closeModal() {
@@ -91,8 +81,7 @@
     wasOpen = false;
 
     removeListeners();
-
-    //modalWithId.removeChild(modalWithId.childNodes[0]);
+    removeSecretDiv();
   }
 
   function loadImage() {
@@ -120,6 +109,16 @@
     window.removeEventListener('keydown', closeClick);
     button.removeEventListener('click', closeClick);
     cross[0].removeEventListener('click', closeClick);
+  }
+
+  function addSecretDiv() {
+    var div = document.createElement('div');
+    div.classList.add('modal-backdrop', 'fade', 'in');
+    modalWithId.insertBefore(div, modalWithId.childNodes[0]);
+  }
+
+  function removeSecretDiv() {
+    modalWithId.removeChild(modalWithId.childNodes[0]);
   }
 
 })();
